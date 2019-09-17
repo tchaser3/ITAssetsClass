@@ -54,6 +54,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindCurrentITAssetsByOfficeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindITAssetAssignmentByEmployeeIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindITAssetAssignmentByEmployeeIDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindITAssetAssignmentByItemIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindITAssetAssignmentByItemIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindITAssetBySerialNumberDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,10 +89,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindRetiredITAssetsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InsertITAssetAssignmentEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertITAssetAssignmentEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsertITAssetAssignmentHistoryEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertITAssetAssignmentHistoryEntry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertITAssetEntry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InsertITAssetEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ITAssetAssignmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITAssetAssignmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ITAssetAssignmentHistoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITAssetAssignmentHistoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ITAssetsClass.cs" />
     <Compile Include="ITAssetsDataSet.Designer.cs">
@@ -100,6 +130,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RetireITAssetsEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateITAssetAssignmentEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateITAssetAssignmentEntry.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateITAssetLocationEntry.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +165,28 @@
     </None>
     <None Include="FindCurrentITAssetsByOfficeDataSet.xss">
       <DependentUpon>FindCurrentITAssetsByOfficeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindITAssetAssignmentByEmployeeIDDataSet.xsc">
+      <DependentUpon>FindITAssetAssignmentByEmployeeIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindITAssetAssignmentByEmployeeIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindITAssetAssignmentByEmployeeIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindITAssetAssignmentByEmployeeIDDataSet.xss">
+      <DependentUpon>FindITAssetAssignmentByEmployeeIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindITAssetAssignmentByItemIDDataSet.xsc">
+      <DependentUpon>FindITAssetAssignmentByItemIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindITAssetAssignmentByItemIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindITAssetAssignmentByItemIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindITAssetAssignmentByItemIDDataSet.xss">
+      <DependentUpon>FindITAssetAssignmentByItemIDDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindITAssetBySerialNumberDataSet.xsc">
       <DependentUpon>FindITAssetBySerialNumberDataSet.xsd</DependentUpon>
@@ -186,6 +243,28 @@
     <None Include="FindRetiredITAssetsDataSet.xss">
       <DependentUpon>FindRetiredITAssetsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="InsertITAssetAssignmentEntry.xsc">
+      <DependentUpon>InsertITAssetAssignmentEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertITAssetAssignmentEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertITAssetAssignmentEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertITAssetAssignmentEntry.xss">
+      <DependentUpon>InsertITAssetAssignmentEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertITAssetAssignmentHistoryEntry.xsc">
+      <DependentUpon>InsertITAssetAssignmentHistoryEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertITAssetAssignmentHistoryEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertITAssetAssignmentHistoryEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertITAssetAssignmentHistoryEntry.xss">
+      <DependentUpon>InsertITAssetAssignmentHistoryEntry.xsd</DependentUpon>
+    </None>
     <None Include="InsertITAssetEntry.xsc">
       <DependentUpon>InsertITAssetEntry.xsd</DependentUpon>
     </None>
@@ -196,6 +275,28 @@
     </None>
     <None Include="InsertITAssetEntry.xss">
       <DependentUpon>InsertITAssetEntry.xsd</DependentUpon>
+    </None>
+    <None Include="ITAssetAssignmentDataSet.xsc">
+      <DependentUpon>ITAssetAssignmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ITAssetAssignmentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ITAssetAssignmentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ITAssetAssignmentDataSet.xss">
+      <DependentUpon>ITAssetAssignmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ITAssetAssignmentHistoryDataSet.xsc">
+      <DependentUpon>ITAssetAssignmentHistoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ITAssetAssignmentHistoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ITAssetAssignmentHistoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ITAssetAssignmentHistoryDataSet.xss">
+      <DependentUpon>ITAssetAssignmentHistoryDataSet.xsd</DependentUpon>
     </None>
     <None Include="ITAssetsDataSet.xsc">
       <DependentUpon>ITAssetsDataSet.xsd</DependentUpon>
@@ -222,6 +323,17 @@
     </None>
     <None Include="RetireITAssetsEntry.xss">
       <DependentUpon>RetireITAssetsEntry.xsd</DependentUpon>
+    </None>
+    <None Include="UpdateITAssetAssignmentEntry.xsc">
+      <DependentUpon>UpdateITAssetAssignmentEntry.xsd</DependentUpon>
+    </None>
+    <None Include="UpdateITAssetAssignmentEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpdateITAssetAssignmentEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UpdateITAssetAssignmentEntry.xss">
+      <DependentUpon>UpdateITAssetAssignmentEntry.xsd</DependentUpon>
     </None>
     <None Include="UpdateITAssetLocationEntry.xsc">
       <DependentUpon>UpdateITAssetLocationEntry.xsd</DependentUpon>

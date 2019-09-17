@@ -48,6 +48,162 @@ namespace ItAssetsDLL
         FindCurrentITAssetsByOfficeDataSet aFindCurrentITAssetsByOfficeDataSet;
         FindCurrentITAssetsByOfficeDataSetTableAdapters.FindCurrentITAssetsByOfficeTableAdapter aFindCurrentITAssetsByOfficeTableAdapter;
 
+        ITAssetAssignmentDataSet aITAssetAssignmentDataSet;
+        ITAssetAssignmentDataSetTableAdapters.itassetassignmentTableAdapter aITAssetAssignmentTableAdapter;
+
+        InsertITAssetAssignmentEntryTableAdapters.QueriesTableAdapter aInsertITAssetAssignmentTableAdapter;
+
+        UpdateITAssetAssignmentEntryTableAdapters.QueriesTableAdapter aUpdateITAssetAssignmentTableAdapter;
+
+        FindITAssetAssignmentByItemIDDataSet aFindITAssetAssignmentByItemIDDataSet;
+        FindITAssetAssignmentByItemIDDataSetTableAdapters.FindITAssetAssignmentByItemIDTableAdapter aFindITAssetAssignmentByItemIDTableAdapter;
+
+        FindITAssetAssignmentByEmployeeIDDataSet aFindITAssetAssignmentByEmployeeIDDataSet;
+        FindITAssetAssignmentByEmployeeIDDataSetTableAdapters.FindITAssetAssignmentByEmployeeIDTableAdapter aFindITAssetAssignmentByEmployeeIDTableAdapter;
+
+        ITAssetAssignmentHistoryDataSet aITAssetAssignmentHistoryDataSet;
+        ITAssetAssignmentHistoryDataSetTableAdapters.itassetassignmenthistoryTableAdapter aITAssetAssignmentHistoryTableAdapter;
+
+        InsertITAssetAssignmentHistoryEntryTableAdapters.QueriesTableAdapter aInsertITAssetAssignmentHistoryTableAdapter;
+
+        public bool InsertITAssetAssignmentHistory(int intItemID, int intEmployeeID, int intAssigningEmployeeID, string strTransactionNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertITAssetAssignmentHistoryTableAdapter = new InsertITAssetAssignmentHistoryEntryTableAdapters.QueriesTableAdapter();
+                aInsertITAssetAssignmentHistoryTableAdapter.InsertITAssetAssignmentHistory(DateTime.Now, intItemID, intEmployeeID, intAssigningEmployeeID, strTransactionNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Assets Class // Insert IT Asset Assignment History " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public ITAssetAssignmentHistoryDataSet GetITAssetAssignmentHistoryInfo()
+        {
+            try
+            {
+                aITAssetAssignmentHistoryDataSet = new ITAssetAssignmentHistoryDataSet();
+                aITAssetAssignmentHistoryTableAdapter = new ITAssetAssignmentHistoryDataSetTableAdapters.itassetassignmenthistoryTableAdapter();
+                aITAssetAssignmentHistoryTableAdapter.Fill(aITAssetAssignmentHistoryDataSet.itassetassignmenthistory);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Asset Class // Get IT Asset Assignment History Info " + Ex.Message);
+            }
+
+            return aITAssetAssignmentHistoryDataSet;
+        }
+        public void UpdateAssetAssignmentHistoryDB(ITAssetAssignmentHistoryDataSet aITAssetAssignmentHistoryDataSet)
+        {
+            try
+            {
+                aITAssetAssignmentHistoryTableAdapter = new ITAssetAssignmentHistoryDataSetTableAdapters.itassetassignmenthistoryTableAdapter();
+                aITAssetAssignmentHistoryTableAdapter.Update(aITAssetAssignmentHistoryDataSet.itassetassignmenthistory);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Asset Class // Update IT Asset Assignment History DB " + Ex.Message);
+            }
+        }
+        public FindITAssetAssignmentByEmployeeIDDataSet FindITAssetAssignmentByEmployeeID(int intEmployeeID)
+        {
+            try
+            {
+                aFindITAssetAssignmentByEmployeeIDDataSet = new FindITAssetAssignmentByEmployeeIDDataSet();
+                aFindITAssetAssignmentByEmployeeIDTableAdapter = new FindITAssetAssignmentByEmployeeIDDataSetTableAdapters.FindITAssetAssignmentByEmployeeIDTableAdapter();
+                aFindITAssetAssignmentByEmployeeIDTableAdapter.Fill(aFindITAssetAssignmentByEmployeeIDDataSet.FindITAssetAssignmentByEmployeeID, intEmployeeID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Assets Class // Find IT Asset Assignment By Employee ID " + Ex.Message);
+            }
+
+            return aFindITAssetAssignmentByEmployeeIDDataSet;
+        }
+        public FindITAssetAssignmentByItemIDDataSet FindITAssetAssignmentByItemID(int intItemID)
+        {
+            try
+            {
+                aFindITAssetAssignmentByItemIDDataSet = new FindITAssetAssignmentByItemIDDataSet();
+                aFindITAssetAssignmentByItemIDTableAdapter = new FindITAssetAssignmentByItemIDDataSetTableAdapters.FindITAssetAssignmentByItemIDTableAdapter();
+                aFindITAssetAssignmentByItemIDTableAdapter.Fill(aFindITAssetAssignmentByItemIDDataSet.FindITAssetAssignmentByItemID, intItemID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Asset Class // Find IT Asset Assignment by Item ID " + Ex.Message);
+            }
+
+            return aFindITAssetAssignmentByItemIDDataSet;
+        }
+        public bool UpdateITAssetAssignment(int intTransactionID, DateTime datTransactionDate, int intEmployeeID, string strTransactionNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aUpdateITAssetAssignmentTableAdapter = new UpdateITAssetAssignmentEntryTableAdapters.QueriesTableAdapter();
+                aUpdateITAssetAssignmentTableAdapter.UpdateITAssetAssignment(intTransactionID, datTransactionDate, intEmployeeID, strTransactionNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Assets Class // Update IT Asset Assignment " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public bool InsertITAssetAssignment(int intItemID, DateTime datTransactionDate, int intEmployeeID, string strTransactionNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertITAssetAssignmentTableAdapter = new InsertITAssetAssignmentEntryTableAdapters.QueriesTableAdapter();
+                aInsertITAssetAssignmentTableAdapter.InsertITAssetAssignment(intItemID, datTransactionDate, intEmployeeID, strTransactionNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Asset Class // Insert IT Asset Assignment " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public ITAssetAssignmentDataSet GetITAssetAssignmentInfo()
+        {
+            try
+            {
+                aITAssetAssignmentDataSet = new ITAssetAssignmentDataSet();
+                aITAssetAssignmentTableAdapter = new ITAssetAssignmentDataSetTableAdapters.itassetassignmentTableAdapter();
+                aITAssetAssignmentTableAdapter.Fill(aITAssetAssignmentDataSet.itassetassignment);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Assets Class // Get IT Asset Assignment Info " + Ex.Message);
+            }
+
+            return aITAssetAssignmentDataSet;
+        }
+        public void UpdateITAssetAssignmentDB(ITAssetAssignmentDataSet aITAssetAssignmentDataSet)
+        {
+            try
+            {
+                aITAssetAssignmentTableAdapter = new ITAssetAssignmentDataSetTableAdapters.itassetassignmentTableAdapter();
+                aITAssetAssignmentTableAdapter.Update(aITAssetAssignmentDataSet.itassetassignment);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "IT Assets Class // Get IT Asset Assignment Info " + Ex.Message);
+            }
+        }
         public FindCurrentITAssetsByOfficeDataSet FindCurrentITAssetsByOffice(string strOffice)
         {
             try
